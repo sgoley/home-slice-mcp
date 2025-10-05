@@ -60,6 +60,12 @@ Calculates monthly payment and total costs.
 - Total interest paid
 - Total cost of ownership
 
+## API Access
+
+This project builds on the work of [@thejoeosborne](https://github.com/thejoeosborne) and his [homeslice-public-api](https://github.com/thejoeosborne/homeslice-public-api) project.
+
+**You must request an API key to use this server.** Get your API key at: https://www.homesliceapp.ai/api-access
+
 ## Usage with Claude Desktop
 
 Add to your `claude_desktop_config.json`:
