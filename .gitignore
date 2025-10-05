@@ -1,0 +1,7 @@
+node_modules
+npm-debug.log
+*.csv
+.DS_Store
+build-mcpb/
+*.mcpb
+.env

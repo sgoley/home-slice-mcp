@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  home-slice-mcp:
+    build: .
+    image: home-slice-mcp:latest
+    stdin_open: true
+    tty: true
+    environment:
+      - HOMESLICE_API_KEY=${HOMESLICE_API_KEY}
+    env_file:
+      - .env

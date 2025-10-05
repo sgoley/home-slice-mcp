@@ -1,0 +1,58 @@
+{
+  "manifest_version": "0.2",
+  "name": "home-slice-mcp",
+  "display_name": "HomeSlice Mortgage Calculator",
+  "version": "1.0.0",
+  "description": "Calculate mortgage payments with live state-specific interest rates from HomeSlice API",
+  "long_description": "This MCP server provides comprehensive mortgage calculation tools with real-time state-specific interest rate data from the HomeSlice API. Calculate monthly payments, total costs, and get detailed breakdowns including principal, interest, property taxes, insurance, and HOA fees. Supports conventional, FHA, and VA loans with terms ranging from 5 to 30 years. Automatically fetches live rates for any US state or allows manual rate input for custom scenarios.",
+  "author": {
+    "name": "Mortgage Calculator MCP"
+  },
+  "license": "MIT",
+  "keywords": [
+    "mortgage",
+    "calculator",
+    "finance",
+    "real-estate",
+    "homeslice",
+    "interest-rates",
+    "home-buying",
+    "state-rates",
+    "fha",
+    "va"
+  ],
+  "server": {
+    "type": "node",
+    "entry_point": "index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["index.js"],
+      "env": {}
+    }
+  },
+  "tools": [
+    {
+      "name": "get_mortgage_rates",
+      "description": "Retrieve live mortgage rates for a specific US state from HomeSlice API (supports conventional, FHA, VA, and ARM products)"
+    },
+    {
+      "name": "calculate_mortgage",
+      "description": "Calculate comprehensive mortgage details including monthly payments, total costs, and breakdowns with state-specific live rates"
+    }
+  ],
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "node": {
+      "minimum": "16.0.0"
+    }
+  },
+  "user_config": {
+    "default_loan_term": {
+      "type": "number",
+      "title": "Default Loan Term (Years)",
+      "description": "Default loan term to use when not specified",
+      "default": 30,
+      "required": false
+    }
+  }
+}

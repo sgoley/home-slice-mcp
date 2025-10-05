@@ -1,0 +1,24 @@
+{
+  "name": "home-slice-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for mortgage calculations with live state-specific HomeSlice API data",
+  "type": "module",
+  "bin": {
+    "home-slice-mcp": "./index.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "files": [
+    "index.js",
+    "README.md"
+  ],
+  "keywords": ["mcp", "mortgage", "calculator", "homeslice", "real-estate"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "dotenv": "^16.4.5"
+  }
+}
