@@ -1,12 +1,12 @@
-# Mortgage Calculator MCP Server
+# Home Slice MCP Server
 
-MCP server that provides mortgage calculation tools with live interest rates from FRED.
+MCP server that provides mortgage calculation tools with live interest rates from Home Slice.
 
 ![Claude Tools](img/Screenshot%20Claude%20Tools.png)
 
 ## Features
 
-- Fetch latest 30-year and 15-year mortgage rates from FRED
+- Fetch latest 30-year and 15-year mortgage rates from Home Slice
 - Calculate monthly payments including principal, interest, taxes, insurance, and HOA
 - Support for down payment as percentage or dollar amount
 - Automatic rate fetching or manual rate input
@@ -26,12 +26,7 @@ docker run -i home-slice-mcp
 docker-compose up
 ```
 
-### Option 2: Via npx
-```bash
-npx mortgage-calc-mcp
-```
-
-### Option 3: Local installation
+### Option 2: Local installation
 ```bash
 npm install
 npm start
@@ -40,7 +35,7 @@ npm start
 ## Tools
 
 ### `get_mortgage_rates`
-Retrieves the latest mortgage rates from FRED.
+Retrieves the latest mortgage rates from Home Slice.
 
 **Returns:**
 - 30-year mortgage rate
@@ -53,7 +48,7 @@ Calculates monthly payment and total costs.
 **Parameters:**
 - `purchase_price` (required): Home purchase price
 - `down_payment` (required): Down payment as "20%" or 50000
-- `interest_rate` (optional): Annual rate %. If omitted, fetches latest from FRED
+- `interest_rate` (optional): Annual rate %. If omitted, fetches latest from Home Slice
 - `loan_term_years` (optional): Loan term, default 30
 - `property_tax_annual` (optional): Annual property tax
 - `home_insurance_annual` (optional): Annual insurance premium
@@ -89,25 +84,13 @@ Add to your `claude_desktop_config.json`:
 }
 ```
 
-### Using npx
-```json
-{
-  "mcpServers": {
-    "mortgage-calc": {
-      "command": "npx",
-      "args": ["-y", "mortgage-calc-mcp"]
-    }
-  }
-}
-```
-
 ### Using local installation
 ```json
 {
   "mcpServers": {
-    "mortgage-calc": {
+    "home-slice-mcp": {
       "command": "node",
-      "args": ["/path/to/mortgage-calc-mcp/index.js"]
+      "args": ["/path/to/home-slice-mcp/index.js"]
     }
   }
 }
